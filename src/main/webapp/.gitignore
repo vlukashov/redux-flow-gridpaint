@@ -1,0 +1,7 @@
+# Node and NPM
+node_modules/
+etc/
+node/
+
+# Bower components
+bower_components/

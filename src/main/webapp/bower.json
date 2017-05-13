@@ -1,0 +1,21 @@
+{
+  "name": "redux-flow-gridpaint",
+  "homepage": "https://github.com/vlukashov/gridpaint",
+  "authors": [
+    "Viktor Lukashov"
+  ],
+  "description": "",
+  "main": "",
+  "license": "Apache2",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#v2.0.0-rc.7"
+  }
+}
