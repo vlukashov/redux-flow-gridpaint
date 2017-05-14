@@ -16,9 +16,9 @@ public class AppReducer implements Reducer<AppState> {
             int[] newCells = new int[typedAction.getWidth() * typedAction.getHeight()];
             for (int w = 0; w < typedAction.getWidth(); w += 1) {
                 for (int h = 0; h < typedAction.getHeight(); h += 1) {
-                    newCells[w * typedAction.getWidth() + h] =
+                    newCells[typedAction.getWidth() * h + w] =
                             w < state.getWidth() && h < state.getHeight()
-                                    ? state.getCells()[w * state.getWidth() + h]
+                                    ? state.getCells()[state.getWidth() * h + w]
                                     : 0;
                 }
             }
@@ -32,8 +32,8 @@ public class AppReducer implements Reducer<AppState> {
             ToggleCell typedAction = (ToggleCell) action;
 
             int[] newCells = Arrays.copyOf(state.getCells(), state.getCells().length);
-            newCells[typedAction.getW() * state.getWidth() + typedAction.getH()] =
-                    newCells[typedAction.getW() * state.getWidth() + typedAction.getH()] == 1 ? 0 : 1;
+            newCells[state.getWidth() * typedAction.getH() + typedAction.getW()] =
+                    newCells[state.getWidth() * typedAction.getH() + typedAction.getW()] == 1 ? 0 : 1;
 
             newState.setWidth(state.getWidth());
             newState.setHeight(state.getHeight());

@@ -6,6 +6,7 @@ import com.vaadin.flow.router.View;
 import com.vaadin.ui.AttachEvent;
 import com.vaadin.ui.Composite;
 import com.vlukashov.gridpaint.components.Grid;
+import com.vlukashov.gridpaint.components.SizeSetter;
 import com.vlukashov.gridpaint.redux.Store;
 
 public class HomeView extends Composite<Div> implements View {
@@ -37,6 +38,7 @@ public class HomeView extends Composite<Div> implements View {
         getElement().setAttribute("style", "padding: 1rem;");
         getContent().add(
                 new H1("Try tapping on the grid cells below to toggle their color:"),
-                new Grid(store));
+                new Grid(store),
+                new SizeSetter(store));
     }
 }

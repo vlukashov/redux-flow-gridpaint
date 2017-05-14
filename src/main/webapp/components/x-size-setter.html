@@ -1,0 +1,37 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/polymer/lib/mixins/gesture-event-listeners.html">
+
+<dom-module id="x-size-setter">
+  <template>
+    <style>
+      :host {
+        display: block;
+        padding: 10px 0;
+      }
+    </style>
+      <label>
+        Width
+        <input on-change="handleWidthChange" value$="[[width]]" type="number" min="0" max="20" />
+      </label>
+      <label>
+        Height
+        <input on-change="handleHeightChange" value$="[[height]]" type="number" min="0" max="20" />
+      </label>
+  </template>
+  <script>
+      class SizeSetter extends Polymer.GestureEventListeners(Polymer.Element) {
+          static get is() {
+              return 'x-size-setter'
+          }
+
+          static get properties() {
+              return {
+                  width: Number, // server-bound
+                  height: Number // server-bound
+              }
+          }
+      }
+
+      customElements.define(SizeSetter.is, SizeSetter);
+  </script>
+</dom-module>
