@@ -29,7 +29,7 @@
     <template is="dom-repeat" items="[[_rows]]" as="row">
       <div class="row">
         <template is="dom-repeat" items="[[row.cells]]" as="cell">
-          <div class$="[[_getCellClass(cell.isFilled)]]"></div>
+          <div class$="[[_getCellClass(cell.isFilled)]]" on-tap="toggleCell" cell-w="[[cell.w]]" cell-h="[[cell.h]]"></div>
         </template>
       </div>
     </template>
